@@ -50,7 +50,8 @@ app.use(session({
 
 // Database connection
 const connection = mysql.createPool({
-    host: process.env.DB_HOST || 'mysql.railway.internal',    
+    connectionLimit: 10,
+    host: process.env.DB_HOST || 'shuttle.proxy.rlwy.net',
     user: process.env.DB_USER || 'root',
     port: process.env.DB_PORT || 30033,
     password: process.env.DB_PASS || 'bgVkUfXGSBFnOOalvmRxtcWAFslIIarx',
